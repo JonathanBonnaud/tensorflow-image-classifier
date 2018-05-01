@@ -1,4 +1,4 @@
-# To convert images from png to jpg
+# To convert images from png to jpg
 
 for i in *.png ; do convert "$i" "${i%.*}.jpg" ; done
 mv decor/*.jpg decor-jpg/
