@@ -27,7 +27,7 @@ Final test accuracy = 87.5%
 `
 
 __Model 2__
-> python -m scripts.retrain --bottleneck_dir=tf_files/bottlenecks --how_many_training_steps=500 --learning_rate=0.03 --model_dir=tf_files/models/ --summaries_dir=tf_files/training_summaries/LR_0.02 --output_graph=tf_files/retrained_graph.pb --output_labels=tf_files/retrained_labels.txt --architecture="${ARCHITECTURE}" --image_dir=tf_files/decor_images
+> python -m scripts.retrain --bottleneck_dir=tf_files/bottlenecks_LR_0.03 --how_many_training_steps=500 --learning_rate=0.03 --model_dir=tf_files/models/ --summaries_dir=tf_files/training_summaries/LR_0.02 --output_graph=tf_files/retrained_graph.pb --output_labels=tf_files/retrained_labels.txt --architecture="${ARCHITECTURE}" --image_dir=tf_files/decor_images
 
 On second run with learning_rate=0.03 I obtain:
 `
@@ -78,7 +78,6 @@ Russia, Poland, Turkey, Belarus.
 - Try other hyperparameters to optimize the accuracy.
 
 
-
-## Notes
-There are some errors in the csv file, for the last two decor (iznik, neglyubka) both pattern and product have type_label = 1.
-
+## Notes
+- __The task is not trivial as we must work with a small dataset (some of the classes has less than 20 images). We must be careful with overfitting__.
+- There are some errors in the csv file, for the last two decor (iznik, neglyubka) both pattern and product have type_label = 1.
