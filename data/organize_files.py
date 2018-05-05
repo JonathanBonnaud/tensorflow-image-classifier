@@ -16,8 +16,9 @@ if __name__ == "__main__":
         for line in file:
             decor_dir = os.path.join(tgt_dir, line[3])  # label name
             decor_file = os.path.join(src_dir, '.'.join([line[6].split('.')[0], 'jpg']))
-            if not os.path.exists(decor_dir):
-                os.mkdir(decor_dir)
-                copy2(decor_file, decor_dir)
-            else:
-                copy2(decor_file, decor_dir)
+            if line[5] == 'product':  # To take only product and not pattern
+                if not os.path.exists(decor_dir):
+                    os.mkdir(decor_dir)
+                    copy2(decor_file, decor_dir)
+                else:
+                    copy2(decor_file, decor_dir)
