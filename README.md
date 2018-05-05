@@ -7,7 +7,7 @@ sh prepare_data.sh
 - Organize images according to classes
 - Do not take pattern images
 
-## Initialisation
+## Initialisation
 
 > IMAGE_SIZE=224  
 > ARCHITECTURE="mobilenet_0.50_${IMAGE_SIZE}"
